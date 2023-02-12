@@ -1,2 +1,2 @@
 # potenci
-MQTT Broker's Password Brute Forcer
+MQTT Credentials Brute Forcer
