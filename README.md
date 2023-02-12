@@ -14,6 +14,7 @@
  python3 potenci.py -h 
  python3 potenci.py 127.0.0.1 -u users.txt -P pwd.txt 
  python3 potenci.py mqtt.broker.xyz -u users.txt -P pwd.txt
+ python3 potenci.py 127.0.0.1 -u ~/Desktop/users.txt -P ~/Desktop/pwd.txt
  ```
  -h, --help #For Help Menu
  
