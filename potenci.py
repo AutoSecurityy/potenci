@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import argparse
 import threading
+import os
 
 # Project Name: Potenci -from the latin word potentialis: force, power
 # MQTT Credentials Bruteforcer
@@ -53,12 +54,17 @@ parser.add_argument("-P", "--password_file", type=str, help="Text file containin
 
 args = parser.parse_args()
 
+
 if args.username_file and args.password_file:
-    with open(args.username_file) as f:
-        usernames = f.read().splitlines()
-    with open(args.password_file) as f:
-        passwords = f.read().splitlines()
-    for username in usernames:
-        for password in passwords:
-            thread = threading.Thread(target=login, args=(args.host, args.port, username, password))
-            thread.start()
+    if not os.path.exists(args.username_file) or not os.path.exists(args.password_file):
+        print("\033[91m[ERROR] Given username or password file does not exist in the directory.\033[0m")
+        exit()
+    else:
+        with open(args.username_file) as f:
+            usernames = f.read().splitlines()
+        with open(args.password_file) as f:
+            passwords = f.read().splitlines()
+        for username in usernames:
+            for password in passwords:
+                thread = threading.Thread(target=login, args=(args.host, args.port, username, password))
+                thread.start()
