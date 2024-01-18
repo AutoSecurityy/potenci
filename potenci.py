@@ -5,9 +5,9 @@ import os
 
 # Project Name: Potenci -from the latin word potentialis: force, power
 # MQTT Credentials Bruteforcer
-# Owned by @souravbaghz
-# https://github.com/souravbaghz
-# https://twitter.com/souravbaghz
+# Team: AutoSecurityy
+# https://github.com/AutoSecurityy
+# https://twitter.com/autosecurityy
 #
 # Usage: python3 potenci.py 127.0.0.1 -u users.txt -P pwd.txt
 #        python3 potenci.py mqtt.broker.xyz -u users.txt -P pwd.txt
